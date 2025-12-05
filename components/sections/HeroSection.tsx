@@ -102,7 +102,7 @@ export function HeroSection() {
                     ease: "linear",
                   }}
                 />
-                <a href="/projects" className="relative z-10 flex items-center justify-center gap-2">
+                <a href="/#projects" className="relative z-10 flex items-center justify-center gap-2">
                   <span>See my work</span>
                   <motion.span
                     animate={{ rotate: [0, 45, 0] }}
@@ -124,7 +124,7 @@ export function HeroSection() {
               className="w-full sm:w-auto"
             >
               <Button variant="ghost" size="lg" className="group relative w-full overflow-hidden border-2 border-white/20 sm:w-auto">
-                <a href="/contact" className="relative z-10 flex items-center justify-center gap-2">
+                <a href="/#contact" className="relative z-10 flex items-center justify-center gap-2">
                   <span>Let&apos;s build together</span>
                   <motion.span
                     animate={{ scale: [1, 1.2, 1] }}
