@@ -9,6 +9,7 @@ import {
 } from "@/components/motion/motion-wrappers";
 import { SectionWrapper } from "@/components/sections/section-wrapper";
 import { Tag } from "@/components/ui/tag";
+import { getImagePath } from "@/lib/image-path";
 
 const OrbitalSkillsScene = dynamic(
   () =>
@@ -51,7 +52,7 @@ export function AboutSection() {
               className="relative h-20 w-20 shrink-0 overflow-hidden rounded-full border-2 border-white/30 bg-slate-900 shadow-[0_18px_55px_rgba(0,0,0,0.9)] sm:h-24 sm:w-24"
             >
               <Image
-                src="/vinuja2.jpg"
+                src={getImagePath("/vinuja2.jpg")}
                 alt="Portrait of Vinuja Ketimingama"
                 fill
                 sizes="(max-width: 768px) 80px, 96px"

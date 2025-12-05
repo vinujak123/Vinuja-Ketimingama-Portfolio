@@ -5,6 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "@/lib/utils";
+import { getImagePath } from "@/lib/image-path";
 import { Github, Linkedin, Menu, X } from "lucide-react";
 
 const links = [
@@ -28,7 +29,7 @@ export function Navbar() {
         <Link href="/" className="flex items-center gap-2 md:gap-3">
           <div className="relative h-10 w-10 overflow-hidden rounded-xl bg-gradient-to-br from-[#00E5FF] via-[#FF46A6] to-[#FF8A00] shadow-[0_0_30px_rgba(0,229,255,0.7)] md:h-12 md:w-12">
             <Image
-              src="/vinuja.png"
+              src={getImagePath("/vinuja.png")}
               alt="Vinuja Ketimingama avatar"
               fill
               sizes="(max-width: 768px) 40px, 48px"

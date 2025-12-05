@@ -7,6 +7,7 @@ import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay, EffectFade } from "swiper/modules";
+import { getImagePath } from "@/lib/image-path";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -81,7 +82,7 @@ export function ProjectsSection() {
                 {/* Project Image */}
                 <div className="relative aspect-[16/9] w-full overflow-hidden md:aspect-[21/9]">
                   <Image
-                    src={project.image || "/placeholder-project.jpg"}
+                    src={getImagePath(project.image || "/placeholder-project.jpg")}
                     alt={project.title}
                     fill
                     className="object-cover transition-transform duration-1000 group-hover:scale-105"
