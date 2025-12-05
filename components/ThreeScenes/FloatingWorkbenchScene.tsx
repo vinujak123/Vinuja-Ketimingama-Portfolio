@@ -122,7 +122,7 @@ export function FloatingWorkbenchScene() {
 
   // Reduce complexity on mobile
   const starCount = isMobile ? 800 : 2200;
-  const dpr = isMobile ? [1, 1.5] : [1, 2];
+  const dpr: [number, number] = isMobile ? [1, 1.5] : [1, 2];
 
   return (
     <div className="h-[260px] w-full overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-b from-slate-900/90 via-slate-950 to-black shadow-[0_40px_90px_rgba(0,0,0,0.8)] md:h-[320px]">

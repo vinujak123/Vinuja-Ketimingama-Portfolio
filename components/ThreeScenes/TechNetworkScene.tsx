@@ -122,7 +122,7 @@ export function TechNetworkScene() {
 
   // Reduce complexity on mobile
   const starCount = isMobile ? 600 : 1500;
-  const dpr = isMobile ? [1, 1.5] : [1, 2];
+  const dpr: [number, number] = isMobile ? [1, 1.5] : [1, 2];
 
   return (
     <div className="relative h-full w-full">

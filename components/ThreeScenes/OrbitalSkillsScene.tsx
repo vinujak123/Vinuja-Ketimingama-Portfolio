@@ -99,7 +99,7 @@ export function OrbitalSkillsScene() {
   }, []);
 
   // Reduce complexity on mobile
-  const dpr = isMobile ? [1, 1.5] : [1, 1.75];
+  const dpr: [number, number] = isMobile ? [1, 1.5] : [1, 1.75];
 
   return (
     <div className="h-[220px] w-full overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-b from-slate-900/80 via-slate-950 to-black shadow-[0_32px_80px_rgba(0,0,0,0.85)] md:h-[260px]">
