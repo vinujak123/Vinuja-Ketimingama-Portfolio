@@ -47,12 +47,10 @@ interface ConnectionLineProps {
 function ConnectionLine({ start, end, color }: ConnectionLineProps) {
   const points = [new THREE.Vector3(...start), new THREE.Vector3(...end)];
   const geometry = new THREE.BufferGeometry().setFromPoints(points);
+  const material = new THREE.LineBasicMaterial({ color, opacity: 0.3, transparent: true });
+  const line = new THREE.Line(geometry, material);
 
-  return (
-    <line geometry={geometry}>
-      <lineBasicMaterial color={color} opacity={0.3} transparent />
-    </line>
-  );
+  return <primitive object={line} />;
 }
 
 function TechNetwork() {

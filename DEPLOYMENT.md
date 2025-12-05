@@ -1,12 +1,5 @@
 # GitHub Pages Deployment Guide
 
-## Important Notes
-
-⚠️ **Contact Form Limitation**: The contact form uses Next.js API routes which don't work with static export. For GitHub Pages deployment, you have two options:
-
-1. **Remove the form submission** (form will still display but won't submit)
-2. **Use a third-party service** like Formspree, EmailJS, or Netlify Forms
-
 ## Setup Instructions
 
 ### 1. Enable GitHub Pages
@@ -67,28 +60,3 @@ npm run build:gh-pages
 
 - This is normal for static sites - GitHub Pages will serve `index.html` for all routes
 - Next.js static export handles this automatically
-
-## Contact Form Alternative
-
-For a working contact form on GitHub Pages, consider:
-
-1. **Formspree** (https://formspree.io) - Free tier available
-2. **EmailJS** (https://www.emailjs.com) - Free tier available
-3. **Web3Forms** (https://web3forms.com) - Free and easy to set up
-
-Example with Web3Forms:
-
-```tsx
-// Replace the API call in ContactSection.tsx
-const res = await fetch("https://api.web3forms.com/submit", {
-  method: "POST",
-  headers: { "Content-Type": "application/json" },
-  body: JSON.stringify({
-    access_key: "YOUR_ACCESS_KEY",
-    name,
-    email,
-    message,
-  }),
-});
-```
-
