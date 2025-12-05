@@ -16,7 +16,7 @@ const nextConfig: NextConfig = {
   
   // Image optimization
   images: {
-    unoptimized: isGithubPages, // GitHub Pages doesn't support Next.js image optimization
+    unoptimized: true, // Always unoptimized for static export compatibility
     formats: ["image/avif", "image/webp"],
     deviceSizes: [640, 750, 828, 1080, 1200, 1920],
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
