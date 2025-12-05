@@ -26,7 +26,7 @@ const allProjects = [
     description:
       "React-based front-end focused on fast content delivery, accessibility, and SEO.",
     tags: ["React", "Tailwind CSS", "REST APIs", "SMTP", "SEO"],
-    image: "/Wijeya Front web.jpg",
+    image: "/Wijeya-Front-web.jpg",
     category: "Frontend",
   },
   {
@@ -34,7 +34,7 @@ const allProjects = [
     description:
       "Administrative web application for Wijeya Newspapers with role-based dashboards, RESTful APIs, rich-text content, and Amazon S3 file storage.",
     tags: ["Laravel", "PHP", "Tailwind CSS", "MySQL", "Amazon S3"],
-    image: "/Wijeya admin system.jpg",
+    image: "/Wijeya-admin-system.jpg",
     category: "Full-Stack",
   },
 ];
