@@ -39,18 +39,18 @@ export function AboutSection() {
       id="about"
       eyebrow="About me"
       title="I design products that feel fast and look great."
-      description="Software Engineering undergraduate with a strong interest in front-end and full-stack development. I focus on building responsive, user-centered interfaces while continuously improving my technical skills."
+      description="Full-stack developer with a strong interest in front-end and full-stack development. I focus on building responsive, user-centered interfaces while continuously improving my technical skills."
       className="relative overflow-hidden"
     >
       <div className="grid gap-8 md:grid-cols-[minmax(0,1.3fr)_minmax(0,1fr)]">
         <RevealOnScroll delay={0.05} className="space-y-6">
           <div className="flex items-center gap-4">
-            <div className="relative h-16 w-16 overflow-hidden rounded-full border border-white/20 bg-slate-900 shadow-[0_18px_55px_rgba(0,0,0,0.9)] aspect-square">
+            <div className="relative h-20 w-20 overflow-hidden rounded-full border border-white/20 bg-slate-900 shadow-[0_18px_55px_rgba(0,0,0,0.9)] aspect-square">
               <Image
-                src="/vinuja.png"
+                src="/vinuja2.jpg"
                 alt="Portrait of Vinuja Ketimingama"
                 fill
-                sizes="64px"
+                sizes="80px"
                 className="object-cover"
                 priority
               />
@@ -58,10 +58,10 @@ export function AboutSection() {
             </div>
             <div>
               <p className="text-xs uppercase tracking-[0.22em] text-slate-400">
-                Software Engineering Undergraduate
+                Full-Stack Developer
               </p>
               <p className="text-sm text-slate-200">
-                I&apos;m a Software Engineering student who enjoys front-end and
+                I&apos;m a full-stack developer who enjoys front-end and
                 full-stack development — from building UIs to integrating
                 secure, scalable backends.
               </p>

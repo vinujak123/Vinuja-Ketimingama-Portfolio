@@ -7,6 +7,7 @@ interface SectionWrapperProps {
   eyebrow?: string;
   title?: string;
   description?: string;
+   center?: boolean;
   children: ReactNode;
 }
 
@@ -16,8 +17,13 @@ export function SectionWrapper({
   eyebrow,
   title,
   description,
+  center,
   children,
 }: SectionWrapperProps) {
+  const headerClasses = center
+    ? "mx-auto max-w-3xl space-y-3 text-center"
+    : "max-w-2xl space-y-3";
+
   return (
     <section
       id={id}
@@ -27,7 +33,7 @@ export function SectionWrapper({
       )}
     >
       {(eyebrow || title || description) && (
-        <div className="max-w-2xl space-y-3">
+        <div className={headerClasses}>
           {eyebrow && (
             <p className="text-[11px] uppercase tracking-[0.24em] text-slate-400">
               {eyebrow}

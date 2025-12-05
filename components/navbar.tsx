@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { Github, Linkedin } from "lucide-react";
@@ -22,7 +23,17 @@ export function Navbar() {
         className="mt-4 flex w-[min(960px,100%-1.5rem)] items-center justify-between rounded-2xl border border-white/8 bg-[rgba(7,12,28,0.9)] px-4 py-2.5 shadow-[0_18px_60px_rgba(0,0,0,0.7)] backdrop-blur-2xl"
       >
         <Link href="/" className="flex items-center gap-2">
-          <span className="h-8 w-8 rounded-xl bg-gradient-to-br from-[#00E5FF] via-[#FF46A6] to-[#FF8A00] shadow-[0_0_30px_rgba(0,229,255,0.7)]" />
+          <div className="relative h-8 w-8 overflow-hidden rounded-xl bg-gradient-to-br from-[#00E5FF] via-[#FF46A6] to-[#FF8A00] shadow-[0_0_30px_rgba(0,229,255,0.7)]">
+            <Image
+              src="/vinuja.png"
+              alt="Vinuja Ketimingama avatar"
+              fill
+              sizes="32px"
+              className="object-cover"
+              priority
+            />
+            <div className="pointer-events-none absolute inset-0 rounded-xl bg-gradient-to-br from-black/10 via-transparent to-black/25" />
+          </div>
           <div className="flex flex-col leading-tight">
             <span className="text-xs uppercase tracking-[0.24em] text-[var(--muted)]">
               Vinuja Ketimingama

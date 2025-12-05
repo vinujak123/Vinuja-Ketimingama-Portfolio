@@ -20,9 +20,9 @@ const jetbrains = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Vinuja Ketimingama — Software Engineering Portfolio",
+  title: "Vinuja Ketimingama — Full-Stack Developer Portfolio",
   description:
-    "Software Engineering undergraduate focused on front-end and full-stack development. I build responsive, user-centered interfaces and full-stack systems.",
+    "Full-stack developer focused on front-end and full-stack development. I build responsive, user-centered interfaces and full-stack systems.",
   icons: {
     icon: "/favicon.png",
   },

@@ -133,10 +133,10 @@ export function ContactSection() {
               <p className="text-[11px] text-slate-500">
                 Or email me directly at{" "}
                 <a
-                  href="mailto:hello@example.dev"
+                  href="mailto:vinujak777@gmail.com"
                   className="text-slate-200 underline decoration-cyan-400/70 underline-offset-4"
                 >
-                  hello@example.dev
+                  vinujak777@gmail.com
                 </a>
               </p>
             </div>
@@ -183,5 +183,7 @@ export function ContactSection() {
     </SectionWrapper>
   );
 }
+
+
 
 

@@ -52,14 +52,14 @@ export function HeroSection() {
         <MotionFadeIn delay={0.05} className="space-y-4">
           <p className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-black/40 px-3 py-1 text-[11px] uppercase tracking-[0.22em] text-slate-300 shadow-[0_18px_60px_rgba(0,0,0,0.85)]">
             <span className="inline-flex h-1.5 w-1.5 rounded-full bg-gradient-to-r from-[#00E5FF] to-[#FF46A6] shadow-[0_0_16px_rgba(56,189,248,0.9)]" />
-            Vinuja Ketimingama · Software Engineering Undergraduate
+            Vinuja Ketimingama · Full-Stack Developer
           </p>
           <h1 className="text-3xl font-semibold leading-tight text-slate-50 md:text-4xl lg:text-[2.7rem] lg:leading-[1.1]">
             I build fast, maintainable products —{" "}
             <span className="text-gradient">from prototype to production.</span>
           </h1>
           <p className="max-w-xl text-sm text-slate-300 md:text-base">
-            Software Engineering undergraduate focused on front-end and
+            Full-stack developer focused on front-end and
             full-stack development. I build responsive, user-centered
             interfaces and full-stack systems with React, Next.js, TypeScript,
             and modern backends.
