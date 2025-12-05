@@ -2,7 +2,7 @@
 
 import { Canvas } from "@react-three/fiber";
 import { Float, OrbitControls, Html, Stars } from "@react-three/drei";
-import { Suspense } from "react";
+import { Suspense, useEffect, useState } from "react";
 
 function Workbench() {
   return (
@@ -111,19 +111,33 @@ function Workbench() {
 }
 
 export function FloatingWorkbenchScene() {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
+
+  // Reduce complexity on mobile
+  const starCount = isMobile ? 800 : 2200;
+  const dpr = isMobile ? [1, 1.5] : [1, 2];
+
   return (
     <div className="h-[260px] w-full overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-b from-slate-900/90 via-slate-950 to-black shadow-[0_40px_90px_rgba(0,0,0,0.8)] md:h-[320px]">
       <Canvas
-        dpr={[1, 2]}
+        dpr={dpr}
         camera={{ position: [3, 2.4, 4], fov: 45 }}
-        shadows
+        shadows={!isMobile}
+        performance={{ min: 0.5 }}
       >
         <color attach="background" args={["#020617"]} />
         <ambientLight intensity={0.7} />
         <Stars
           radius={24}
           depth={32}
-          count={2200}
+          count={starCount}
           factor={2.4}
           saturation={0}
           fade

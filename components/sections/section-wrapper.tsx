@@ -28,7 +28,7 @@ export function SectionWrapper({
     <section
       id={id}
       className={cn(
-        "relative scroll-mt-28 space-y-8 rounded-[32px] border border-white/10 bg-[radial-gradient(circle_at_top,_rgba(0,229,255,0.08),transparent_55%),radial-gradient(circle_at_bottom,_rgba(255,70,166,0.08),transparent_55%)]/10 p-5 shadow-[0_20px_70px_rgba(0,0,0,0.7)] backdrop-blur-3xl md:p-8",
+        "relative scroll-mt-20 space-y-6 rounded-2xl border border-white/10 bg-[radial-gradient(circle_at_top,_rgba(0,229,255,0.08),transparent_55%),radial-gradient(circle_at_bottom,_rgba(255,70,166,0.08),transparent_55%)]/10 p-4 shadow-[0_20px_70px_rgba(0,0,0,0.7)] backdrop-blur-3xl sm:scroll-mt-24 sm:space-y-8 sm:rounded-3xl sm:p-6 md:scroll-mt-28 md:p-8 md:rounded-[32px]",
         className
       )}
     >
@@ -40,12 +40,12 @@ export function SectionWrapper({
             </p>
           )}
           {title && (
-            <h2 className="text-gradient text-2xl font-semibold md:text-3xl">
+            <h2 className="text-gradient text-xl font-semibold leading-tight sm:text-2xl md:text-3xl">
               {title}
             </h2>
           )}
           {description && (
-            <p className="text-sm text-slate-300 md:text-base">
+            <p className="text-sm leading-relaxed text-slate-300 sm:text-base">
               {description}
             </p>
           )}

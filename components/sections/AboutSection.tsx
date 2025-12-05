@@ -2,6 +2,7 @@
 
 import dynamic from "next/dynamic";
 import Image from "next/image";
+import { motion } from "framer-motion";
 import {
   MotionFadeIn,
   RevealOnScroll,
@@ -42,33 +43,50 @@ export function AboutSection() {
       description="Full-stack developer with a strong interest in front-end and full-stack development. I focus on building responsive, user-centered interfaces while continuously improving my technical skills."
       className="relative overflow-hidden"
     >
-      <div className="grid gap-8 md:grid-cols-[minmax(0,1.3fr)_minmax(0,1fr)]">
-        <RevealOnScroll delay={0.05} className="space-y-6">
-          <div className="flex items-center gap-4">
-            <div className="relative h-20 w-20 overflow-hidden rounded-full border border-white/20 bg-slate-900 shadow-[0_18px_55px_rgba(0,0,0,0.9)] aspect-square">
+      <div className="grid gap-6 sm:gap-8 md:grid-cols-[minmax(0,1.3fr)_minmax(0,1fr)]">
+        <RevealOnScroll delay={0.05} className="space-y-4 sm:space-y-6">
+          <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
+            <motion.div
+              whileHover={{ scale: 1.05, rotate: 2 }}
+              className="relative h-20 w-20 shrink-0 overflow-hidden rounded-full border-2 border-white/30 bg-slate-900 shadow-[0_18px_55px_rgba(0,0,0,0.9)] sm:h-24 sm:w-24"
+            >
               <Image
                 src="/vinuja2.jpg"
                 alt="Portrait of Vinuja Ketimingama"
                 fill
-                sizes="80px"
+                sizes="(max-width: 768px) 80px, 96px"
                 className="object-cover"
                 priority
               />
-              <div className="absolute inset-0 rounded-full bg-[radial-gradient(circle_at_0_0,rgba(0,229,255,0.6),transparent_55%),radial-gradient(circle_at_100%_100%,rgba(255,70,166,0.7),transparent_55%)] opacity-60" />
-            </div>
+              <motion.div
+                animate={{
+                  background: [
+                    "radial-gradient(circle at 0% 0%, rgba(0,229,255,0.6), transparent 55%), radial-gradient(circle at 100% 100%, rgba(255,70,166,0.7), transparent 55%)",
+                    "radial-gradient(circle at 100% 0%, rgba(255,70,166,0.7), transparent 55%), radial-gradient(circle at 0% 100%, rgba(0,229,255,0.6), transparent 55%)",
+                    "radial-gradient(circle at 0% 0%, rgba(0,229,255,0.6), transparent 55%), radial-gradient(circle at 100% 100%, rgba(255,70,166,0.7), transparent 55%)",
+                  ],
+                }}
+                transition={{
+                  duration: 4,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
+                className="absolute inset-0 rounded-full opacity-60"
+              />
+              <div className="absolute inset-0 rounded-full ring-2 ring-cyan-400/30 ring-offset-2 ring-offset-transparent" />
+            </motion.div>
             <div>
               <p className="text-xs uppercase tracking-[0.22em] text-slate-400">
                 Full-Stack Developer
               </p>
-              <p className="text-sm text-slate-200">
-                I&apos;m a full-stack developer who enjoys front-end and
-                full-stack development — from building UIs to integrating
+              <p className="text-sm leading-relaxed text-slate-200 sm:text-base">
+                Building responsive, user-centered interfaces and integrating
                 secure, scalable backends.
               </p>
             </div>
           </div>
 
-          <p className="text-sm text-slate-300 md:text-[15px]">
+          <p className="text-sm leading-relaxed text-slate-300 sm:text-base md:text-[15px]">
             I am committed to contributing to innovative projects and growing as
             a professional developer. My experience spans full-stack work across
             admin systems, content platforms, and CRM dashboards, with a focus
@@ -98,9 +116,20 @@ export function AboutSection() {
             </div>
           </div>
 
-          <div className="flex flex-wrap gap-1.5">
-            {skills.map((label) => (
-              <Tag key={label}>{label}</Tag>
+          <div className="flex flex-wrap gap-2">
+            {skills.map((label, i) => (
+              <motion.div
+                key={label}
+                initial={{ opacity: 0, scale: 0.8 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
+                whileHover={{ scale: 1.05, y: -2 }}
+              >
+                <Tag className="border-white/20 bg-gradient-to-r from-black/60 via-black/40 to-black/60 backdrop-blur-sm shadow-md transition-all hover:border-cyan-400/40 hover:shadow-cyan-500/20">
+                  {label}
+                </Tag>
+              </motion.div>
             ))}
           </div>
         </RevealOnScroll>

@@ -2,14 +2,14 @@
 
 import { Canvas } from "@react-three/fiber";
 import { Float, OrbitControls, Html } from "@react-three/drei";
-import { Suspense } from "react";
+import { Suspense, useEffect, useState } from "react";
 
 const skills = [
   { label: "React", color: "#22c55e", position: [1.4, 0.2, 0.4] },
   { label: "Next.js", color: "#60a5fa", position: [-1.5, -0.1, -0.2] },
   { label: "TypeScript", color: "#38bdf8", position: [0.3, 0.9, -1.2] },
   { label: "Node.js", color: "#facc15", position: [-0.4, -0.9, 1.1] },
-  { label: "Cloud", color: "#a855f7", position: [0.9, -0.3, -1.6] },
+  { label: "Laravel", color: "#ff2d20", position: [0.9, -0.3, -1.6] },
 ];
 
 function BadgeSphere({
@@ -89,9 +89,21 @@ function OrbitCluster() {
 }
 
 export function OrbitalSkillsScene() {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
+
+  // Reduce complexity on mobile
+  const dpr = isMobile ? [1, 1.5] : [1, 1.75];
+
   return (
     <div className="h-[220px] w-full overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-b from-slate-900/80 via-slate-950 to-black shadow-[0_32px_80px_rgba(0,0,0,0.85)] md:h-[260px]">
-      <Canvas dpr={[1, 1.75]} camera={{ position: [0, 0.6, 4.2], fov: 45 }}>
+      <Canvas dpr={dpr} camera={{ position: [0, 0.6, 4.2], fov: 45 }} performance={{ min: 0.5 }}>
         <color attach="background" args={["#020617"]} />
         <ambientLight intensity={0.45} />
         <spotLight

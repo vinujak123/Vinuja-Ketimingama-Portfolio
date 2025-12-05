@@ -16,7 +16,7 @@ export function LayoutShell({ children }: LayoutShellProps) {
         <Navbar />
         <main
           data-scroll-container
-          className="smooth-scroll relative mx-auto flex w-full max-w-6xl flex-1 flex-col gap-14 px-4 pb-4 pt-28 md:px-8 lg:px-10"
+          className="smooth-scroll relative mx-auto flex w-full max-w-6xl flex-1 flex-col gap-6 pb-4 pt-20 px-4 sm:gap-8 sm:pt-24 md:gap-10 md:px-6 lg:gap-12 lg:px-8"
         >
           {children}
         </main>
